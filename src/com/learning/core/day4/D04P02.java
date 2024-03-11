@@ -1,4 +1,4 @@
-package com.learning.day4;
+package com.learning.core.day4;
 
 class NotEligibleException extends Exception {
     public NotEligibleException(String message) {

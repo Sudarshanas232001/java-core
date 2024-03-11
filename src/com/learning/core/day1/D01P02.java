@@ -1,4 +1,4 @@
-package com.learning.day1;
+package com.learning.core.day1;
 interface Medicinelnfo {
     void displayLabel();
 }

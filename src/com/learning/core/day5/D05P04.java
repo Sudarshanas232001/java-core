@@ -1,4 +1,4 @@
-package com.learning.day5;
+package com.learning.core.day5;
 
 import java.util.HashSet;
 
