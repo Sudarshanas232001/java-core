@@ -2,13 +2,13 @@ package com.learning.core.day5;
 
 import java.util.*;
 
-class Person implements Comparable<Person> {
+class Persoon implements Comparable<Persoon> {
     private int id;
     private String name;
     private int age;
     private double salary;
 
-    public Person(int id, String name, int age, double salary) {
+    public Persoon(int id, String name, int age, double salary) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -31,33 +31,33 @@ class Person implements Comparable<Person> {
             return true;
         if (obj == null || getClass() != obj.getClass())
             return false;
-        Person person = (Person) obj;
-        return id == person.id &&
-                age == person.age &&
-                Double.compare(person.salary, salary) == 0 &&
-                Objects.equals(name, person.name);
+        Persoon persoon = (Persoon) obj;
+        return id == persoon.id &&
+                age == persoon.age &&
+                Double.compare(persoon.salary, salary) == 0 &&
+                Objects.equals(name, persoon.name);
     }
 
     @Override
-    public int compareTo(Person o) {
+    public int compareTo(Persoon o) {
         return Integer.compare(this.id, o.id);
     }
 }
 
 public class D05P08 {
     public static void main(String[] args) {
-        TreeSet<Person> personSet = new TreeSet<>();
+        TreeSet<Persoon> personSet = new TreeSet<>();
 
         // Predefined information of 6 persons
-        personSet.add(new Person(1, "Jerry", 12, 999.0));
-        personSet.add(new Person(2, "Smith", 22, 2999.0));
-        personSet.add(new Person(3, "Popeye", 21, 5999.0));
-        personSet.add(new Person(4, "Jones", 22, 6999.0));
-        personSet.add(new Person(5, "John", 22, 6999.0));
-        personSet.add(new Person(6, "Tom", 42, 3999.0));
+        personSet.add(new Persoon(1, "Jerry", 12, 999.0));
+        personSet.add(new Persoon(2, "Smith", 22, 2999.0));
+        personSet.add(new Persoon(3, "Popeye", 21, 5999.0));
+        personSet.add(new Persoon(4, "Jones", 22, 6999.0));
+        personSet.add(new Persoon(5, "John", 22, 6999.0));
+        personSet.add(new Persoon(6, "Tom", 42, 3999.0));
 
         // Print all person details
-        for (Person person : personSet) {
+        for (Persoon person : personSet) {
             System.out.println(person);
         }
     }

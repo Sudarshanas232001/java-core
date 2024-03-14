@@ -2,13 +2,13 @@ package com.learning.core.day5;
 
 import java.util.*;
 
-class Person implements Comparable<Person> {
+class Persona implements Comparable<Persona> {
     private int id;
     private String name;
     private int age;
     private double salary;
 
-    public Person(int id, String name, int age, double salary) {
+    public Persona(int id, String name, int age, double salary) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -47,12 +47,12 @@ class Person implements Comparable<Person> {
             return true;
         if (obj == null || getClass() != obj.getClass())
             return false;
-        Person person = (Person) obj;
+        Persona person = (Persona) obj;
         return id == person.id;
     }
 
     @Override
-    public int compareTo(Person other) {
+    public int compareTo(Persona other) {
         return Integer.compare(this.id, other.id);
     }
 }
@@ -60,7 +60,7 @@ class Person implements Comparable<Person> {
 public class D05P10 {
 	public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        TreeSet<Person> personSet = new TreeSet<>();
+        TreeSet<Persona> personSet = new TreeSet<>();
 
         // Taking input for 6 persons
         for (int i = 1; i <= 6; i++) {
@@ -76,11 +76,11 @@ public class D05P10 {
             double salary = scanner.nextDouble();
             scanner.nextLine(); // Consume newline
 
-            personSet.add(new Person(id, name, age, salary));
+            personSet.add(new Persona(id, name, age, salary));
         }
 
         // Finding and printing the first person whose name starts with "j"
-        for (Person person : personSet) {
+        for (Persona person : personSet) {
             if (person.getName().toLowerCase().startsWith("j")) {
                 System.out.println("First person whose name starts with 'j': " + person);
                 break;
